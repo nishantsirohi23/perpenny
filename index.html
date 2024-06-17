@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Account</title>
+    <title>PerPenny - Skilled Professionals for Every Work</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-        h1 {
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
             text-align: center;
         }
-        p {
-            margin-bottom: 20px;
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .contact-info {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin: 5px 0;
         }
         .btn-delete {
             background-color: #f44336;
@@ -37,20 +63,50 @@
 </head>
 <body>
 
+<div class="header">
+    <h1>Welcome to PerPenny</h1>
+    <a href="https://play.google.com/store/apps/details?id=com.nishantsirohi.perwork&hl=en_US" target="_blank">Download PerPenny App</a>
+</div>
+
 <div class="container">
-    <h1>Delete Your Account</h1>
-    <p>If you wish to delete your account, please click the button below. Please note that this action is irreversible.</p>
-    <p>Upon deletion, the following data will be removed:</p>
-    <ul>
-        <li>Your user profile</li>
-        <li>All your saved data in our database</li>
-    </ul>
-    <p>Data that will be retained:</p>
-    <ul>
-        <li>None</li>
-    </ul>
-    <button class="btn-delete" onclick="deleteAccount()">Delete My Account</button>
-    <p id="statusMessage"></p>
+    <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>PerPenny is a platform where you can get skilled professionals for every work. Whether you need a plumber, electrician, web developer, or any other professional service, PerPenny connects you with the best experts in the field.</p>
+    </div>
+
+    <div class="section" id="support">
+        <h2>Support</h2>
+        <p>If you need assistance, our support team is here to help you. We provide 24/7 support to ensure you get the help you need whenever you need it.</p>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <ul class="contact-info">
+            <li>Email: contact@perpenny.com</li>
+            <li>Phone: +91 8630277749</li>
+            <li>Address: H 36 Nav Shakti Dham Meerut</li>
+        </ul>
+    </div>
+
+    <div class="section" id="delete-account">
+        <h2>Delete Your Account</h2>
+        <p>If you wish to delete your account, please click the button below. Please note that this action is irreversible.</p>
+        <p>Upon deletion, the following data will be removed:</p>
+        <ul>
+            <li>Your user profile</li>
+            <li>All your saved data in our database</li>
+        </ul>
+        <p>Data that will be retained:</p>
+        <ul>
+            <li>None</li>
+        </ul>
+        <button class="btn-delete" onclick="deleteAccount()">Delete My Account</button>
+        <p id="statusMessage"></p>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2024 PerPenny. All rights reserved.
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>

@@ -22,6 +22,22 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        .nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
         .container {
             padding: 20px;
         }
@@ -59,6 +75,9 @@
         .btn-delete:hover {
             background-color: #d32f2f;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -68,27 +87,35 @@
     <a href="https://play.google.com/store/apps/details?id=com.nishantsirohi.perwork&hl=en_US" target="_blank">Download PerPenny App</a>
 </div>
 
+<div class="nav">
+    <a href="#" onclick="showSection('introduction')">Introduction</a>
+    <a href="#" onclick="showSection('support')">Support</a>
+    <a href="#" onclick="showSection('contact')">Contact Us</a>
+    <a href="#" onclick="showSection('delete-account')">Delete Account</a>
+    <a href="#" onclick="showSection('refund-policy')">Refund Policy</a>
+</div>
+
 <div class="container">
     <div class="section" id="introduction">
         <h2>Introduction</h2>
         <p>PerPenny is a platform where you can get skilled professionals for every work. Whether you need a plumber, electrician, web developer, or any other professional service, PerPenny connects you with the best experts in the field.</p>
     </div>
 
-    <div class="section" id="support">
+    <div class="section hidden" id="support">
         <h2>Support</h2>
         <p>If you need assistance, our support team is here to help you. We provide 24/7 support to ensure you get the help you need whenever you need it.</p>
     </div>
 
-    <div class="section" id="contact">
+    <div class="section hidden" id="contact">
         <h2>Contact Us</h2>
         <ul class="contact-info">
-            <li>Email: contact@perpenny.com</li>
+            <li>Email: perpennyworksllp@gmail.com</li>
             <li>Phone: +91 8630277749</li>
             <li>Address: H 36 Nav Shakti Dham Meerut</li>
         </ul>
     </div>
 
-    <div class="section" id="delete-account">
+    <div class="section hidden" id="delete-account">
         <h2>Delete Your Account</h2>
         <p>If you wish to delete your account, please click the button below. Please note that this action is irreversible.</p>
         <p>Upon deletion, the following data will be removed:</p>
@@ -102,6 +129,36 @@
         </ul>
         <button class="btn-delete" onclick="deleteAccount()">Delete My Account</button>
         <p id="statusMessage"></p>
+    </div>
+
+    <div class="section hidden" id="refund-policy">
+        <h2>Refund Policy</h2>
+        <p>At PerPenny Works LLP, customer satisfaction is our top priority. If you are not satisfied with the service provided, you may be eligible for a refund under the following conditions:</p>
+        <h3>Eligibility for Refund</h3>
+        <ul>
+            <li>A refund request must be submitted within 24 hours of the service completion.</li>
+            <li>Refunds are applicable if the service provided is significantly different from the description or agreed-upon terms.</li>
+            <li>Refunds will be considered if the service provider fails to complete the task or if there are substantial issues with the service quality.</li>
+        </ul>
+        <h3>How to Request a Refund</h3>
+        <ul>
+            <li>To request a refund, please contact our customer support team at <a href="mailto:perpennyworksllp@gmail.com">perpennyworksllp@gmail.com</a> with the details of your service and the reason for your refund request.</li>
+            <li>Provide any relevant evidence or documentation to support your claim, such as photographs or service receipts.</li>
+        </ul>
+        <h3>Refund Process</h3>
+        <ul>
+            <li>Upon receiving your refund request, our team will review the details and determine eligibility.</li>
+            <li>If approved, the refund will be processed within 5 working days from the date of approval.</li>
+            <li>The refund will be credited to the original payment method used for the transaction.</li>
+        </ul>
+        <h3>Non-Refundable Situations</h3>
+        <ul>
+            <li>Refunds will not be issued for services that have been completed to the agreed-upon standards.</li>
+            <li>Refunds are not applicable if the service was canceled by the customer without a valid reason.</li>
+            <li>Any disputes arising after 24 hours of service completion will not be eligible for a refund.</li>
+            <li>If food or items are delivered or packed, cancellations and refunds are not applicable.</li>
+        </ul>
+        <p>For any questions or further assistance regarding our refund policy, please contact our customer support team at <a href="mailto:perpennyworksllp@gmail.com">perpennyworksllp@gmail.com</a> or call us at +91 8630277749.</p>
     </div>
 </div>
 
@@ -143,6 +200,17 @@
         } else {
             document.getElementById('statusMessage').textContent = 'No user is signed in.';
         }
+    }
+
+    function showSection(sectionId) {
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            if (section.id === sectionId) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
     }
 </script>
 
